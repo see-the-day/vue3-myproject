@@ -1,15 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hellod Vue 3.0 + Vite" />
+  <span>{{state}}</span>
+  <button @click="sum">qweqeqw</button>
 </template>
 
 <script lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-
+import { ref } from "vue"
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  setup() {
+    const state:string = ref('1321')
+    function sum() {
+      this.state++
+    }
+    return {state, sum}
   }
 }
 </script>
